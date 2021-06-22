@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Learning</title>
+    <style>
+        .akadesu {
+            color: red;
+        }
+
+        .flip-list-move {
+            transition: transform .5s;
+        }
+
+        .alert {
+            background-color: #fcc;
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+  <body>
+    <div id="app">
+        {{ aiue }}
+
+        <p v-if="error">
+            doudoudou
+        </p>
+
+        <p :class="akanisitai">
+            赤色ですよ
+        </p>
+
+        <p>{{ now }}</p>
+        <button v-on:click="time">現在時刻を表示</button>
+
+        <button v-on:click="shuffle">シャッフル</button>
+        <transition-group name="flip-list" tag="ul">
+            <li v-for="ken in kenlist" :key="ken.name">
+                {{ ken.name }}
+            </li>
+        </transition-group>
+
+        <dosukoi-box>aが入力されていません</dosukoi-box>
+        <dosukoi-box>aが入力されていません</dosukoi-box>
+        <dosukoi-box>aが入力されていません</dosukoi-box>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
